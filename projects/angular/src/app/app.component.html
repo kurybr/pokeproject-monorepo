@@ -1,0 +1,30 @@
+<!-- https://angular.io/guide/ajs-quick-reference -->
+<!-- Toolbar -->
+<main class="application container-fluid">
+  <header></header>
+  <section class="container row">
+    <section class="col">
+      <nav class="list-group">
+        <button
+        *ngFor="let pokemon of pokemons"
+        class="list-group-item"
+        (click)="getPokemonInfo(pokemon)"
+        >
+          {{pokemon.name}}
+        </button>
+      </nav>
+    </section>
+    <section class="col">
+        <div *ngIf="pokemon" class="card" style="width: 18rem;">
+          <img src="{{pokemon.sprites.front_default}}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{pokemon.name}}
+            </h5>
+          </div>
+        </div>
+    </section>
+  </section>
+  <footer></footer>
+</main>
+<router-outlet></router-outlet>
